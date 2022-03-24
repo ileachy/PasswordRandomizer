@@ -19,7 +19,12 @@ function generatePassword() {
   let lowerChoice = confirm("Should password have lowercase letters?");
   let upperChoice = confirm("Should password have uppercase letters?");
   let specChoice = confirm("Should password have special characters?");
-  while (!numChoice && !lowerChoice && !upperChoice && !specChoice) {
+  while (
+    numChoice !== true &&
+    lowerChoice !== true &&
+    upperChoice !== true &&
+    specChoice !== true
+  ) {
     alert("At least 1 must be selected!");
     let numChoice = confirm("Should password have numbers?");
     let lowerChoice = confirm("Should password have lowercase letters?");
