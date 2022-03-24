@@ -5,7 +5,7 @@ let upperC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let specialC = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
 // Create password
-function generatePass() {
+function generatePassword() {
   let pass = "";
   let length = prompt("Select a password length between 8 and 128 characters");
   while (length <= 7 || length >= 129) {
@@ -45,6 +45,7 @@ function generatePass() {
   for (let i = 0; i < length; i++) {
     randomPass += pass[Math.floor(Math.random() * pass.length)];
   }
+  return randomPass;
 }
 
 // Get references to the #generate element
