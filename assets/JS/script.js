@@ -2,11 +2,41 @@
 let num = "0123456789";
 let lowerC = "abcdefghijklmnopqrstuvwxyz";
 let upperC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let specialC = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+let specialC = [
+  "!",
+  "#",
+  "$",
+  "%",
+  "&",
+  "'",
+  "(",
+  ")",
+  "*",
+  "+",
+  ",",
+  "-",
+  ".",
+  "/",
+  ":",
+  ";",
+  "<",
+  "=",
+  ">",
+  "?",
+  "@",
+  "[",
+  "]",
+  "^",
+  "_",
+  "`",
+  "{",
+  "|",
+  "}",
+  "~",
+];
 
 // Create password
 function generatePassword() {
-  let pass = "";
   let length = prompt("Select a password length between 8 and 128 characters");
   while (length <= 7 || length >= 129) {
     alert("Password must be between 8 and 128 characters");
@@ -32,7 +62,7 @@ function generatePassword() {
     let specChoice = confirm("Should password have special characters?");
   }
   // input validation
-  if (numChoice) {
+  /*if (numChoice) {
     pass += numChoice;
   }
   if (lowerChoice) {
@@ -43,12 +73,13 @@ function generatePassword() {
   }
   if (specChoice) {
     pass += specChoice;
-  }
-
+  }*/
+  let charControl = lowerC.concat(upperC, num, specialC);
   // randomization
   let randomPass = "";
   for (let i = 0; i < length; i++) {
-    randomPass += pass[Math.floor(Math.random() * pass.length)];
+    randomPass =
+      randomPass + charControl[Math.floor(Math.random() * charControl.length)];
   }
   return randomPass;
 }
