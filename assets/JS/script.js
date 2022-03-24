@@ -26,20 +26,25 @@ function generatePass() {
     let upperChoice = confirm("Should password have uppercase letters?");
     let specChoice = confirm("Should password have special characters?");
   }
-}
+  // input validation
+  if (numChoice) {
+    pass += numChoice;
+  }
+  if (lowerChoice) {
+    pass += lowerChoice;
+  }
+  if (upperChoice) {
+    pass += upperChoice;
+  }
+  if (specChoice) {
+    pass += specChoice;
+  }
 
-// input validation
-if (numChoice) {
-  pass += numChoice;
-}
-if (lowerChoice) {
-  pass += lowerChoice;
-}
-if (upperChoice) {
-  pass += upperChoice;
-}
-if (specChoice) {
-  pass += specChoice;
+  // randomization
+  let randomPass = "";
+  for (let i = 0; i < length; i++) {
+    randomPass += pass[Math.floor(Math.random() * pass.length)];
+  }
 }
 
 // Get references to the #generate element
