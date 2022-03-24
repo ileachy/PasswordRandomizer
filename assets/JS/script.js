@@ -28,6 +28,20 @@ function generatePass() {
   }
 }
 
+// input validation
+if (numChoice) {
+  pass += numChoice;
+}
+if (lowerChoice) {
+  pass += lowerChoice;
+}
+if (upperChoice) {
+  pass += upperChoice;
+}
+if (specChoice) {
+  pass += specChoice;
+}
+
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
