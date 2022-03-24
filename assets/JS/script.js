@@ -37,10 +37,10 @@ let specialC = [
 
 // Create password
 function generatePassword() {
-  let length = prompt("Select a password length between 8 and 128 characters");
-  while (length <= 7 || length >= 129) {
+  let leng = prompt("Select a password length between 8 and 128 characters");
+  while (leng <= 7 || leng >= 129) {
     alert("Password must be between 8 and 128 characters");
-    let length = prompt(
+    let leng = prompt(
       "Please select a password length between 8 and 128 characters"
     );
   }
@@ -63,12 +63,12 @@ function generatePassword() {
   }
   let charControl = lowerC.concat(upperC, num, specialC);
   // randomization
-  let randomPass = "";
+  let ranPass = "";
   for (let i = 0; i < length; i++) {
-    randomPass =
-      randomPass + charControl[Math.floor(Math.random() * charControl.length)];
+    ranPass =
+      ranPass + charControl[Math.floor(Math.random() * charControl.length)];
   }
-  return randomPass;
+  return ranPass;
 }
 
 // Get references to the #generate element
