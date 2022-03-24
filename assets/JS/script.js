@@ -61,19 +61,6 @@ function generatePassword() {
     let upperChoice = confirm("Should password have uppercase letters?");
     let specChoice = confirm("Should password have special characters?");
   }
-  // input validation
-  /*if (numChoice) {
-    pass += numChoice;
-  }
-  if (lowerChoice) {
-    pass += lowerChoice;
-  }
-  if (upperChoice) {
-    pass += upperChoice;
-  }
-  if (specChoice) {
-    pass += specChoice;
-  }*/
   let charControl = lowerC.concat(upperC, num, specialC);
   // randomization
   let randomPass = "";
