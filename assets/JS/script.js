@@ -92,6 +92,11 @@ let charControl = [];
 
 function promts() {
   let charControl = [];
+  // char selections
+  let numChoice = "Should password have numbers?";
+  let lowerChoice = "Should password have lowercase letters?";
+  let upperChoice = "Should password have uppercase letters?";
+  let specChoice = "Should password have special characters?";
   // select char count
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
@@ -99,34 +104,29 @@ function promts() {
     return false;
   }
 
-  // char selections
-  let numChoice = confirm("Should password have numbers?");
-  let lowerChoice = confirm("Should password have lowercase letters?");
-  let upperChoice = confirm("Should password have uppercase letters?");
-  let specChoice = confirm("Should password have special characters?");
   // if no selection, re-send
-  while (
+  /*while (
     numChoice !== true &&
     lowerChoice !== true &&
     upperChoice !== true &&
     specChoice !== true
   ) {
     alert("At least 1 must be selected!");
-  }
+  }*/
   // puts pass selections together
-  if (numChoice) {
+  if (confirm(numChoice)) {
     charControl = charControl.concat(num);
   }
 
-  if (lowerChoice) {
+  if (confirm(lowerChoice)) {
     charControl = charControl.concat(lowerC);
   }
 
-  if (upperChoice) {
+  if (confirm(upperChoice)) {
     charControl = charControl.concat(upperC);
   }
 
-  if (specChoice) {
+  if (confirm(specChoice)) {
     charControl = charControl.concat(specialC);
   }
   return true;
@@ -149,7 +149,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   if (choices) {
     var password = generatePassword();
-
     passwordText.value = password;
   }
 }
