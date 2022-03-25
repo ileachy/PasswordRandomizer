@@ -1,3 +1,9 @@
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+
 // Assignment code here
 
 let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -92,12 +98,14 @@ let specialC = [
 
 // Create password
 function generatePassword() {
-  let ranPass = [];
+  let charControl = [];
   // select char count
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
     alert("Password must be between 8 and 128 characters");
+    return false;
   }
+
   // char selections
   let numChoice = confirm("Should password have numbers?");
   let lowerChoice = confirm("Should password have lowercase letters?");
@@ -112,19 +120,32 @@ function generatePassword() {
   ) {
     alert("At least 1 must be selected!");
   }
+  if (numChoice) {
+    ranPass = ranPass.concat(num);
+  }
+
+  if (lowerChoice) {
+    ranPass = ranPass.concat(lowerC);
+  }
+
+  if (upperChoice) {
+    ranPass = ranPass.concat(upperC);
+  }
+
+  if (specChoice) {
+    ranPass = ranPass.concat(specialC);
+  }
+
   // puts pass selections together
-  let charControl = lowerC.concat(upperC, num, specialC);
+  //let charControl = ranPass.concat(numChoice, , specialC);
   // randomization
 
   for (let i = 0; i < leng; i++) {
-    ranPass =
-      ranPass + charControl[Math.floor(Math.random() * charControl.length)];
+    ranPass = "";
+    ranPass + charControl[Math.floor(Math.random() * charControl.length)];
   }
   return ranPass;
 }
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
@@ -133,6 +154,3 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
