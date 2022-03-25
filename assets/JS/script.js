@@ -89,6 +89,7 @@ let specialC = [
   "}",
   "~",
 ];
+let ranPass = [];
 
 // Create password
 function generatePassword() {
@@ -122,7 +123,7 @@ function generatePassword() {
   // puts pass selections together
   let charControl = lowerC.concat(upperC, num, specialC);
   // randomization
-  let ranPass = "";
+
   for (let i = 0; i < leng; i++) {
     ranPass =
       ranPass + charControl[Math.floor(Math.random() * charControl.length)];
