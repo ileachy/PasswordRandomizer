@@ -37,13 +37,7 @@ let specialC = [
 ];
 
 // Create password
-function generatePassword(
-  leng,
-  numChoice,
-  lowerChoice,
-  upperChoice,
-  specChoice
-) {
+function generatePassword() {
   // select char count
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
