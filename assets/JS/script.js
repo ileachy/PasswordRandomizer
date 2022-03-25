@@ -1,8 +1,3 @@
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 // Assignment code here
 let num = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 let lowerC = [
@@ -93,9 +88,29 @@ let specialC = [
   "}",
   "~",
 ];
-
+// char selections
+let numChoice = "Should password have numbers?";
+let lowerChoice = "Should password have lowercase letters?";
+let upperChoice = "Should password have uppercase letters?";
+let specChoice = "Should password have special characters?";
 let charControl = [];
-let leng = 1;
+// global for leng to be accessed in genpass function
+let leng = 8;
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+// Write password to the #password input
+function writePassword() {
+  let choices = prompts();
+  var passwordText = document.querySelector("#password");
+
+  if (choices) {
+    var password = generatePassword();
+  }
+
+  passwordText.value = password;
+}
 
 // Create password
 function generatePassword() {
@@ -108,29 +123,14 @@ function generatePassword() {
   return ranPass;
 }
 
-function promts() {
+function prompts() {
   let charControl = [];
-  // char selections
-  let numChoice = "Should password have numbers?";
-  let lowerChoice = "Should password have lowercase letters?";
-  let upperChoice = "Should password have uppercase letters?";
-  let specChoice = "Should password have special characters?";
   // select char count
-  leng = prompt("Select a password length between 8 and 128 characters");
+  let leng = prompt("Select a password length between 8 and 128 characters");
   if (leng < 8 || leng > 128) {
     alert("Password must be between 8 and 128 characters");
     return false;
   }
-
-  // if no selection, re-send
-  /*while (
-    numChoice !== true &&
-    lowerChoice !== true &&
-    upperChoice !== true &&
-    specChoice !== true
-  ) {
-    alert("At least 1 must be selected!");
-  }*/
   // puts pass selections together
   if (confirm(numChoice)) {
     charControl = charControl.concat(num);
@@ -150,13 +150,12 @@ function promts() {
   return true;
 }
 
-// Write password to the #password input
-function writePassword() {
-  let choices = promts();
-
-  if (choices) {
-    var password = generatePassword();
-    var passwordText = document.querySelector("#password");
-    passwordText.value = password;
-  }
-}
+// if no selection, re-send
+/*while (
+    numChoice !== true &&
+    lowerChoice !== true &&
+    upperChoice !== true &&
+    specChoice !== true
+  ) {
+    alert("At least 1 must be selected!");
+  }*/
