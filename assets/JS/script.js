@@ -90,10 +90,12 @@ let specialC = [
 ];
 
 function promts() {
+  // select char count
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
     alert("Password must be between 8 and 128 characters");
     return leng;
+    console.log(leng);
   }
 
   // char selections
@@ -110,6 +112,7 @@ function promts() {
   ) {
     alert("At least 1 must be selected!");
   }
+  // puts pass selections together
   if (numChoice) {
     charControl = charControl.concat(num);
   }
@@ -130,12 +133,9 @@ function promts() {
 // Create password
 function generatePassword() {
   let charControl = [];
-  // select char count
 
-  // puts pass selections together
   //let charControl = ranPass.concat(numChoice, , specialC);
   // randomization
-
   for (let i = 0; i < leng; i++) {
     ranPass = "";
     randomized =
