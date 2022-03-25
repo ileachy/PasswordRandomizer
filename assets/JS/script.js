@@ -37,9 +37,11 @@ let specialC = [
 
 // Create password
 function generatePassword() {
+  // select char count
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
     alert("Password must be between 8 and 128 characters");
+    // resend count prompt if none selected
     let leng = prompt(
       "Please select a password length between 8 and 128 characters"
     );
