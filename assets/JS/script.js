@@ -89,14 +89,11 @@ let specialC = [
   "~",
 ];
 
-// Create password
-function generatePassword() {
-  let charControl = [];
-  // select char count
+function promts() {
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
     alert("Password must be between 8 and 128 characters");
-    return false;
+    return leng;
   }
 
   // char selections
@@ -128,6 +125,12 @@ function generatePassword() {
   if (specChoice) {
     charControl = charControl.concat(specialC);
   }
+}
+
+// Create password
+function generatePassword() {
+  let charControl = [];
+  // select char count
 
   // puts pass selections together
   //let charControl = ranPass.concat(numChoice, , specialC);
