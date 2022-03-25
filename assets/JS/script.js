@@ -1,8 +1,62 @@
 // Assignment code here
 
-let num = "0123456789";
-let lowerC = "abcdefghijklmnopqrstuvwxyz";
-let upperC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let lowerC = [
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
+];
+let upperC = [
+  "A",
+  "B",
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "H",
+  "I",
+  "J",
+  "K",
+  "L",
+  "M",
+  "N",
+  "O",
+  "P",
+  "Q",
+  "R",
+  "S",
+  "T",
+  "U",
+  "V",
+  "W",
+  "X",
+  "Y",
+  "Z",
+];
 let specialC = [
   "!",
   "#",
@@ -69,7 +123,7 @@ function generatePassword() {
   let charControl = lowerC.concat(upperC, num, specialC);
   // randomization
   let ranPass = "";
-  for (let i = 0; i < length; i++) {
+  for (let i = 0; i < leng; i++) {
     ranPass =
       ranPass + charControl[Math.floor(Math.random() * charControl.length)];
   }
