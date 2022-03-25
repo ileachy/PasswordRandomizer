@@ -96,8 +96,7 @@ function promts() {
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
     alert("Password must be between 8 and 128 characters");
-    return leng;
-    console.log(leng);
+    return false;
   }
 
   // char selections
@@ -130,6 +129,7 @@ function promts() {
   if (specChoice) {
     charControl = charControl.concat(specialC);
   }
+  return true;
 }
 
 // Create password
@@ -137,18 +137,19 @@ function generatePassword() {
   let ranPass = "";
   // randomization
   for (let i = 0; i < leng; i++) {
-    randomized =
-      ranPass + charControl[Math.floor(Math.random() * charControl.length)];
+    randomized = Math.floor(Math.random() * charControl.length);
+    ranPass = ranPass + charControl[randomized];
   }
-  return randomized;
+  return ranPass;
 }
 
 // Write password to the #password input
 function writePassword() {
   let choices = promts();
+  var passwordText = document.querySelector("#password");
   if (choices) {
     var password = generatePassword();
-    var passwordText = document.querySelector("#password");
+
     passwordText.value = password;
   }
 }
