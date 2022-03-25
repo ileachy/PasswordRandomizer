@@ -134,10 +134,9 @@ function promts() {
 
 // Create password
 function generatePassword() {
-  //let charControl = ranPass.concat(numChoice, , specialC);
+  let ranPass = "";
   // randomization
   for (let i = 0; i < leng; i++) {
-    ranPass = "";
     randomized =
       ranPass + charControl[Math.floor(Math.random() * charControl.length)];
   }
@@ -150,9 +149,8 @@ function writePassword() {
   if (choices) {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
+    passwordText.value = password;
   }
-
-  passwordText.value = password;
 }
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
