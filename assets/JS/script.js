@@ -146,8 +146,11 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let choices = promts();
+  if (choices) {
+    var password = generatePassword();
+    var passwordText = document.querySelector("#password");
+  }
 
   passwordText.value = password;
 }
