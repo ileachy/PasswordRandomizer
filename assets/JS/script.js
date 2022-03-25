@@ -97,10 +97,6 @@ function generatePassword() {
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
     alert("Password must be between 8 and 128 characters");
-    // resend count prompt if none selected
-    let leng = prompt(
-      "Please select a password length between 8 and 128 characters"
-    );
   }
   // char selections
   let numChoice = confirm("Should password have numbers?");
@@ -115,10 +111,6 @@ function generatePassword() {
     specChoice !== true
   ) {
     alert("At least 1 must be selected!");
-    let numChoice = confirm("Should password have numbers?");
-    let lowerChoice = confirm("Should password have lowercase letters?");
-    let upperChoice = confirm("Should password have uppercase letters?");
-    let specChoice = confirm("Should password have special characters?");
   }
   // puts pass selections together
   let charControl = lowerC.concat(upperC, num, specialC);
