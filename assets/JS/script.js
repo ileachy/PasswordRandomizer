@@ -1,4 +1,5 @@
 // Assignment code here
+
 let num = "0123456789";
 let lowerC = "abcdefghijklmnopqrstuvwxyz";
 let upperC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -36,7 +37,13 @@ let specialC = [
 ];
 
 // Create password
-function generatePassword() {
+function generatePassword(
+  leng,
+  numChoice,
+  lowerChoice,
+  upperChoice,
+  specChoice
+) {
   // select char count
   let leng = prompt("Select a password length between 8 and 128 characters");
   while (leng <= 7 || leng >= 129) {
