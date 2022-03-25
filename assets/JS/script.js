@@ -1,11 +1,4 @@
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-// Get references to the #generate element
-var generateBtn = document.querySelector("#generate");
-
 // Assignment code here
-
 let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let lowerC = [
   "a",
@@ -121,19 +114,19 @@ function generatePassword() {
     alert("At least 1 must be selected!");
   }
   if (numChoice) {
-    ranPass = ranPass.concat(num);
+    charControl = charControl.concat(num);
   }
 
   if (lowerChoice) {
-    ranPass = ranPass.concat(lowerC);
+    charControl = charControl.concat(lowerC);
   }
 
   if (upperChoice) {
-    ranPass = ranPass.concat(upperC);
+    charControl = charControl.concat(upperC);
   }
 
   if (specChoice) {
-    ranPass = ranPass.concat(specialC);
+    charControl = charControl.concat(specialC);
   }
 
   // puts pass selections together
@@ -142,7 +135,8 @@ function generatePassword() {
 
   for (let i = 0; i < leng; i++) {
     ranPass = "";
-    ranPass + charControl[Math.floor(Math.random() * charControl.length)];
+    ranPass =
+      ranPass + charControl[Math.floor(Math.random() * charControl.length)];
   }
   return ranPass;
 }
@@ -154,3 +148,7 @@ function writePassword() {
 
   passwordText.value = password;
 }
+// Get references to the #generate element
+var generateBtn = document.querySelector("#generate");
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
