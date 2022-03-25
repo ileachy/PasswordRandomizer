@@ -124,7 +124,7 @@ function generatePassword() {
 }
 
 function prompts() {
-  let charControl = [];
+  charControl = [];
   // select char count
   let leng = prompt("Select a password length between 8 and 128 characters");
   if (leng < 8 || leng > 128) {
