@@ -135,10 +135,10 @@ function generatePassword() {
 
   for (let i = 0; i < leng; i++) {
     ranPass = "";
-    ranPass =
+    randomized =
       ranPass + charControl[Math.floor(Math.random() * charControl.length)];
   }
-  return ranPass;
+  return randomized;
 }
 
 // Write password to the #password input
