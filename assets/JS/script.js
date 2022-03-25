@@ -88,6 +88,7 @@ let specialC = [
   "}",
   "~",
 ];
+let charControl = [];
 
 function promts() {
   let charControl = [];
